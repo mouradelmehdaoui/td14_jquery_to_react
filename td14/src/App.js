@@ -1,8 +1,11 @@
 import { Routes, Route } from 'react-router-dom'
-import './style/main.css'
+import './style/sass/main.css'
 import Home from './pages/Home'
 import Error from './pages/Error'
-import Employee from './components/Employee'
+import Employee from './pages/Employee';
+// In your main JavaScript/React entry file (e.g., index.js or App.js)
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
