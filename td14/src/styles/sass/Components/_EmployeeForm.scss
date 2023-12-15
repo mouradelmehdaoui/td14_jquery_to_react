@@ -1,0 +1,65 @@
+
+.FormEmployee{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    padding: 2% 5% 3% 5%;
+    border-radius: 0.5rem;
+    box-shadow: rgba(154, 165, 149, 0.2) 0px 8px 24px;
+    background: var(--lighter);
+
+    section {
+        &.h2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2%;
+        }
+    }
+
+    .form-group {
+        &.input {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            width: 100%;
+
+            input {
+                border: none;
+                line-height: 2rem;
+                border-radius: 0.5rem;
+                padding: 0 1rem;
+                color: var(--darker);
+                font-size: 1rem;
+            }
+        }
+
+        &.select {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            width: 100%;
+
+        }
+    }
+
+    .btn-form {
+        display: block;
+        margin: 0 auto;
+        padding: 0.5rem 1rem;
+        background: var(--darker);
+        color: var(--light);
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s ease-in-out;
+
+        &:hover {
+            background: var(--dark);
+            box-shadow: rgba(126, 146, 47, 0.9) 0 0 22px 6px;
+        }
+    }
+}

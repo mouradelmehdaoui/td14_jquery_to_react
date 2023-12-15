@@ -1,0 +1,30 @@
+@use "../utils/" as *;
+
+body {
+    background: var(--light);
+    font-family: 'Playfair Display', serif;
+    color: var(--cod-gray);
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 500;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+text {
+    font-family: 'Roboto', sans-serif;
+}
+
+tspan {
+    font-size: 12px;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
