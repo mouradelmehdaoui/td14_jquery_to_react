@@ -8,7 +8,7 @@ import states from "../../data/states";
 import departments from "../../data/departments";
 import DatePicker from "../DatePicker/DatePicker";
 import Select from "../Select/Select";
-
+import { useAlert } from "react-alert"; // Import useAlert
 
 const EmployeeForm = ({ onSaveEmployee }) => {
   const dispatch = useDispatch();
@@ -16,13 +16,21 @@ const EmployeeForm = ({ onSaveEmployee }) => {
 
   const navigate = useNavigate(); // Initialize useNavigate
 
+  const alert = useAlert();
+
   const handleSaveEmployee = (data) => {
     dispatch(addEmployee(data));
     onSaveEmployee(data);
     reset();
-    // Redirect to the employee list page after saving
 
-    navigate("/employees");
+    alert.show('Employee added successfully!', {
+      type: 'success',
+      onClose: () => {
+        // Redirect to the employee list page after the alert is closed (adjust as needed)
+        // Example using react-router-dom's useNavigate
+        navigate('/employees');
+      },
+    });
   };
 
   return (

@@ -3,6 +3,7 @@ import logo from '../../assets/flowerLogo.png';
 import employeeTableLogo from '../../assets/users-list.svg';
 import addEmployeeLogo from '../../assets/users-add.svg';
 
+
 const Header = ({ page }) => {
   return page === 'list' ? (
     <header>
@@ -17,8 +18,8 @@ const Header = ({ page }) => {
         <p className="brand-text">HRNet</p>
       </section>
       <nav aria-label="main navigation" className="nav-links">
-        <Link to="/" className="nav-link tooltip">
-          <span className="tooltiptext">Add employee</span>
+        <Link to="/" className="nav-link menu">
+          <span className="menutext">Add employee</span>
           <img
             src={addEmployeeLogo}
             alt="add employee logo"
@@ -42,8 +43,8 @@ const Header = ({ page }) => {
         <p className="brand-text">HRNet</p>
       </section>
       <nav aria-label="main navigation" className="nav-links">
-        <Link to="/employees" className="nav-link tooltip">
-          <span className="tooltiptext">Employee list</span>
+        <Link to="/employees" className="nav-link menu">
+          <span className="menutext">Employee list</span>
           <img
             src={employeeTableLogo}
             alt="employee table logo"

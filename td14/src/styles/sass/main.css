@@ -91,10 +91,6 @@
   line-height: 24px;
 }
 
-#root {
-  display: flex;
-}
-
 h1,
 h2,
 h3,
@@ -287,12 +283,11 @@ header {
   justify-content: space-between;
   box-shadow: 0px 15px 10px -15px var(--darker);
 }
-
-.tooltip {
+header .menu {
   position: relative;
   display: inline-block;
 }
-.tooltip .tooltiptext {
+header .menu .menutext {
   visibility: hidden;
   width: 120px;
   background-color: var(--dark);
@@ -307,7 +302,7 @@ header {
   opacity: 0;
   transition: opacity 1s;
 }
-.tooltip .tooltiptext::after {
+header .menu .menutext::after {
   content: " ";
   position: absolute;
   top: 50%;
@@ -317,19 +312,17 @@ header {
   border-style: solid;
   border-color: transparent transparent transparent var(--dark);
 }
-.tooltip:hover .tooltiptext {
+header .menu:hover .menutext {
   visibility: visible;
   opacity: 1;
 }
-
-.brand {
+header .brand {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-
-.brand-text {
+header .brand .brand-text {
   font-size: 2rem;
   text-align: center;
   font-weight: bold;
@@ -337,8 +330,7 @@ header {
   margin-left: 0.7rem;
   margin-bottom: 0.3rem;
 }
-
-.brand-logo {
+header .brand .brand-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -351,8 +343,8 @@ header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.336);
   margin-left: 1rem;
 }
-
-.employee-list--ico {
+header .employee-list--ico,
+header .add-employee--ico {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -361,17 +353,6 @@ header {
   display: block;
   margin: 0 auto;
 }
-
-.add-employee--ico {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: block;
-  margin: 0 auto;
-}
-
-.nav-links {
+header .nav-links {
   margin-right: 1rem;
 }/*# sourceMappingURL=main.css.map */

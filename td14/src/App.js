@@ -4,12 +4,13 @@ import Error from './pages/Error'
 import CreateEmployee from './pages/CreateEmployee';
 
 
-// Bootstrap
+// // Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/js/bootstrap.bundle";
 
-
+// CSS Styles
+import "./styles/sass/main.css";
 
 export default function App() {
 	return (
