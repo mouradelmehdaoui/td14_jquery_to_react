@@ -1,20 +1,20 @@
 // components/SearchBar.js
-import React from 'react';
+import React from "react";
 
 const SearchBar = ({ onSearch }) => {
   return (
-    <div className="input-group">
-      <div className="input-group-prepend">
-        <span className="input-group-text" id="basic-addon1">
-          Search:
-        </span>
-      </div>
+    <div className="input-group rounded w-25 mx-auto">
       <input
-        type="text"
-        className="form-control"
+        type="search"
+        className="form-control rounded"
         placeholder="Search"
+        aria-label="Search"
+        aria-describedby="search-addon"
         onChange={(e) => onSearch(e.target.value)}
       />
+      <span class="input-group-text border-0" id="search-addon">
+        <i class="fas fa-search"></i>
+      </span>
     </div>
   );
 };

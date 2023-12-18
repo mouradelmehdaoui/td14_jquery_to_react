@@ -87,7 +87,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
   line-height: 24px;
 }
 
@@ -296,6 +295,12 @@ button {
 .FormEmployee .btn-form:hover {
   background: var(--dark);
   box-shadow: rgba(126, 146, 47, 0.9) 0 0 22px 6px;
+}
+
+table thead,
+table tfoot {
+  background-color: #a1bb27 !important;
+  --bs-table-bg: #b8c47e !important;
 }
 
 /* Tooltip container */

@@ -22,12 +22,12 @@ const EmployeeForm = ({ onSaveEmployee }) => {
 
     const formattedData = {
       ...data,
-      address: {
-        street: data.street,
-        city: data.city,
-        zipCode: data.zipCode,
-        state: data.state,
-      },
+      // address: {
+      //   street: data.street,
+      //   city: data.city,
+      //   zipCode: data.zipCode,
+      //   state: data.state,
+      // },
       dateOfBirth: data.dateOfBirth.toLocaleDateString('fr-FR'),
       startDate: data.startDate.toLocaleDateString('fr-FR'),
     };

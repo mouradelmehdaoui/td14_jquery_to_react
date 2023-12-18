@@ -20,7 +20,7 @@ const CreateEmployee = () => {
 	<>
 	<Header page="list" />
     <div className="container">
-      <h1 className="mt-5 mb-4">Current Employees</h1>
+      <p className="mt-5 mb-4 text-center h2">Current Employees</p>
       {/* Assuming you have the EmployeeForm component (previously created) */}
       {/* <EmployeeForm onSaveEmployee={handleSaveEmployee} /> */}
 

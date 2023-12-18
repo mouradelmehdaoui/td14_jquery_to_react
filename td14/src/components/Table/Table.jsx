@@ -34,28 +34,10 @@ const Table = ({ data, columns }) => {
   return (
     <div className="container mt-5">
       <div className="d-flex justify-content-between align-items-center mb-3">
-        <div>
-          <label>Show</label>
-          <select
-            className="form-control form-control-sm"
-            value={pageSize}
-            onChange={(e) => {
-              setPageSize(Number(e.target.value));
-            }}
-          >
-            {[10, 25, 50, 100].map((pageSize) => (
-              <option key={pageSize} value={pageSize}>
-                {pageSize}
-              </option>
-            ))}
-          </select>
-          <span>entries</span>
-        </div>
-        <div className="input-group">
-          <SearchBar
+
+        <SearchBar
             onSearch={(value) => setGlobalFilter(value || undefined)}
           />
-        </div>
       </div>
       <table {...getTableProps()} className="table">
         <thead>
@@ -101,7 +83,23 @@ const Table = ({ data, columns }) => {
           </tr>
         </tfoot>
       </table>
-      <div className="mt-3 text-center">
+      <div className="mt-3 text-center d-flex">
+      <span>
+          <label>Show</label>
+          <select
+            className="form-control form-control-sm"
+            value={pageSize}
+            onChange={(e) => {
+              setPageSize(Number(e.target.value));
+            }}
+          >
+            {[10, 25, 50, 100].map((pageSize) => (
+              <option key={pageSize} value={pageSize}>
+                {pageSize}
+              </option>
+            ))}
+          </select>
+        </span>
         <p className="mb-0">
           Showing{" "}
           {pageIndex * pageSize + 1} to{" "}
@@ -115,6 +113,8 @@ const Table = ({ data, columns }) => {
           Next Page
         </button>
       </div>
+      
+
     </div>
   );
 };

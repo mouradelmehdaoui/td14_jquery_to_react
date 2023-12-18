@@ -1,0 +1,10 @@
+@use "../Utils/" as *;
+
+table {
+
+    thead,
+    tfoot {
+        background-color: #a1bb27 !important;
+        --bs-table-bg: #b8c47e !important;
+    }
+}
