@@ -226,11 +226,36 @@ button {
   box-shadow: rgba(154, 165, 149, 0.2) 0px 8px 24px;
   background: var(--lighter);
 }
-.FormEmployee section.h2 {
+.FormEmployee .form-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 2%;
+}
+.FormEmployee .form-header h2 {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1rem auto;
+  color: var(--darker);
+  font-size: 1.5rem;
+}
+.FormEmployee label {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.FormEmployee fieldset {
+  border: none;
+  background-color: #F3F8CF;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: rgba(154, 165, 149, 0.2) 0px 8px 24px;
 }
 .FormEmployee .form-group.input {
   display: flex;
@@ -245,6 +270,9 @@ button {
   padding: 0 1rem;
   color: var(--darker);
   font-size: 1rem;
+}
+.FormEmployee .form-group .react-datepicker-wrapper {
+  width: 100%;
 }
 .FormEmployee .form-group.select {
   display: flex;

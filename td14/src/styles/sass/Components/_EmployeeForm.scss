@@ -1,5 +1,4 @@
-
-.FormEmployee{
+.FormEmployee {
     display: flex;
     flex-direction: column;
     max-width: 500px;
@@ -9,13 +8,42 @@
     box-shadow: rgba(154, 165, 149, 0.2) 0px 8px 24px;
     background: var(--lighter);
 
-    section {
-        &.h2 {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 2%;
+    .form-header {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2%;
+
+        h2 {
+            width: fit-content;
+            margin: 1rem auto;
+            color: var(--darker);
+            font-size: 1.5rem;
         }
+
+
+    }
+
+    label {
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--dark);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center
+    }
+
+    fieldset {
+        border: none;
+        background-color: #F3F8CF;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        box-shadow: rgba(154, 165, 149, 0.2) 0px 8px 24px;
+
     }
 
     .form-group {
@@ -35,6 +63,10 @@
             }
         }
 
+        .react-datepicker-wrapper {
+            width: 100%;
+        }
+        
         &.select {
             display: flex;
             flex-direction: column;

@@ -4,7 +4,7 @@ import Select from 'react-select';
 const CustomSelect = ({ name, options, register, label, defaultValue }) => {
   const handleChange = (selectedOption) => {
     // Update the form value using register
-    register(name).onChange(selectedOption.value);
+    register(name, { value: selectedOption.value }); // Call register with the field name and value
   };
 
   const selectedOption = options.find((option) => option.value === defaultValue);
@@ -13,10 +13,11 @@ const CustomSelect = ({ name, options, register, label, defaultValue }) => {
     <div className="form-group">
       <label htmlFor={name}>{label}</label>
       <Select
-        {...register(name)}
+        name={name}
         value={selectedOption}
         onChange={handleChange}
         options={options}
+        isSearchable={true}
       />
     </div>
   );

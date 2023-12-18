@@ -11,7 +11,7 @@ const DatePicker = ({ value, onChange, placeholder }) => {
       placeholderText={placeholder}
       dateFormat="dd/MM/yyyy"
       showTimeInput={false}  
-      className="form-control"
+      className="form-control w-100"
     />
   );
 };
