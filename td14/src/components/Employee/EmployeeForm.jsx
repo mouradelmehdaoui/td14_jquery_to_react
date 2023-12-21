@@ -28,8 +28,8 @@ const EmployeeForm = ({ onSaveEmployee }) => {
       //   zipCode: data.zipCode,
       //   state: data.state,
       // },
-      dateOfBirth: data.dateOfBirth.toLocaleDateString('fr-FR'),
-      startDate: data.startDate.toLocaleDateString('fr-FR'),
+      dateOfBirth: data.dateOfBirth ? new Date(data.dateOfBirth).toLocaleDateString('fr-FR') : null,
+    startDate: data.startDate ? new Date(data.startDate).toLocaleDateString('fr-FR') : null,
     };
     dispatch(addEmployee(formattedData));
     onSaveEmployee(data);
@@ -46,7 +46,7 @@ const EmployeeForm = ({ onSaveEmployee }) => {
   };
 
   return (
-    <div className="container mt-5 FormEmployee">
+    <div className="container mt-5 FormEmployee w-25">
       <div className="mt-3 text-center">
         <Link to="/employees" className="btn btn-success mt-2 mb-5 btn-form">
           View Current Employees

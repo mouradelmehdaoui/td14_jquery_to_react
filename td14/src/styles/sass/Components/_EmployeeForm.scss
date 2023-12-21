@@ -1,12 +1,12 @@
 .FormEmployee {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    margin: auto;
-    padding: 2% 5% 3% 5%;
-    border-radius: 0.5rem;
-    box-shadow: rgba(154, 165, 149, 0.2) 0px 8px 24px;
-    background: var(--lighter);
+    // display: flex;
+    // flex-direction: column;
+    // margin: auto;
+    // padding: 2% 5% 3% 5%;
+    // border-radius: 0.5rem;
+    // box-shadow: rgba(154, 165, 149, 0.2) 0px 8px 24px;
+    // background: var(--lighter);
+     max-width: 450px;
 
     .form-header{
 
@@ -87,6 +87,7 @@
         font-weight: bold;
         cursor: pointer;
         transition: background 0.2s ease-in-out;
+        width: 100%;
 
         &:hover {
             background: var(--dark);

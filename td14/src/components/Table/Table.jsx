@@ -1,7 +1,12 @@
 // components/Table.js
 import React from "react";
-import { useTable, useSortBy, useGlobalFilter, usePagination } from "react-table";
-import  SearchBar  from '../../components/Search/SearchBar';
+import {
+  useTable,
+  useSortBy,
+  useGlobalFilter,
+  usePagination,
+} from "react-table";
+import SearchBar from "../../components/Search/SearchBar";
 
 const Table = ({ data, columns }) => {
   const {
@@ -34,19 +39,14 @@ const Table = ({ data, columns }) => {
   return (
     <div className="container mt-5">
       <div className="d-flex justify-content-between align-items-center mb-3">
-
-        <SearchBar
-            onSearch={(value) => setGlobalFilter(value || undefined)}
-          />
+        <SearchBar onSearch={(value) => setGlobalFilter(value || undefined)} />
       </div>
       <table {...getTableProps()} className="table">
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th
-                  {...column.getHeaderProps(column.getSortByToggleProps())}
-                >
+                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
                   <span>
                     {column.isSorted
@@ -75,46 +75,40 @@ const Table = ({ data, columns }) => {
         <tfoot>
           <tr>
             <td colSpan={columns.length} className="text-center">
-              Showing{" "}
-              {pageIndex * pageSize + 1} to{" "}
-              {Math.min((pageIndex + 1) * pageSize, data.length)} of{" "}
-              {data.length} entries
+              <table>{/* ... (your table body and header code) */}</table>
+              <div className="d-flex align-items-baseline justify-content-center">
+                <div className="d-flex align-items-baseline px-2">
+                  <label>Show</label>
+                  <select
+                    className="form-control form-control-sm"
+                    value={pageSize}
+                    onChange={(e) => {
+                      setPageSize(Number(e.target.value));
+                    }}
+                  >
+                    {[10, 25, 50, 100].map((pageSizeOption) => (
+                      <option key={pageSizeOption} value={pageSizeOption}>
+                        {pageSizeOption}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <p className="mb-0 px-2">
+                  Showing {pageIndex * pageSize + 1} to{" "}
+                  {Math.min((pageIndex + 1) * pageSize, data.length)} of{" "}
+                  {data.length} entries
+                </p>
+                <button class="btn btn-outline-dark px-1" onClick={previousPage} disabled={!canPreviousPage}>
+                  Previous Page
+                </button>
+                <button class="btn btn-outline-dark" onClick={nextPage} disabled={!canNextPage}>
+                  Next Page
+                </button>
+              </div>
             </td>
           </tr>
         </tfoot>
       </table>
-      <div className="mt-3 text-center d-flex">
-      <span>
-          <label>Show</label>
-          <select
-            className="form-control form-control-sm"
-            value={pageSize}
-            onChange={(e) => {
-              setPageSize(Number(e.target.value));
-            }}
-          >
-            {[10, 25, 50, 100].map((pageSize) => (
-              <option key={pageSize} value={pageSize}>
-                {pageSize}
-              </option>
-            ))}
-          </select>
-        </span>
-        <p className="mb-0">
-          Showing{" "}
-          {pageIndex * pageSize + 1} to{" "}
-          {Math.min((pageIndex + 1) * pageSize, data.length)} of{" "}
-          {data.length} entries
-        </p>
-        <button onClick={previousPage} disabled={!canPreviousPage}>
-          Previous Page
-        </button>
-        <button onClick={nextPage} disabled={!canNextPage}>
-          Next Page
-        </button>
-      </div>
-      
-
     </div>
   );
 };
