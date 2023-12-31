@@ -14,8 +14,6 @@ const Home = () => {
   }, [modalOpen]);
 
   const handleSaveEmployee = (employeeData) => {
-    // Implement your saveEmployee logic here
-    console.log("Employee data:", employeeData);
     setModalOpen(true);
   };
   return (

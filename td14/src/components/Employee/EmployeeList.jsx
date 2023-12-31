@@ -8,8 +8,6 @@ const EmployeeList = ({ employees }) => {
   const endEntry = Math.min(startEntry + entriesPerPage - 1, employees.length);
   const totalEntries = employees.length;
 
-  console.log("Component employee", employees);
-
   const columns = [
     {
       Header: "First Name",

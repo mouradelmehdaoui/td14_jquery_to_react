@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-// import { PersistGate } from 'redux-persist/integration/react';
 import store from './treatments/reduxtoolkit/store';
 import mockEmployeeList from './data/mock'; // Import the mock data
 import { addEmployee } from './treatments/reduxtoolkit/employeeSlice';
@@ -21,12 +20,10 @@ const root = createRoot(document.getElementById('root'));
 
 root.render(
   <Provider store={store}>
-    {/* <PersistGate loading={null} persistor={persistor}> */}
       <React.StrictMode>
           <Router>
             <App />
           </Router>
       </React.StrictMode>
-    {/* </PersistGate> */}
   </Provider>
 );

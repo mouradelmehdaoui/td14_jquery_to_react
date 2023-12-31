@@ -2,7 +2,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import employeeReducer from './employeeSlice';
 import storage from 'redux-persist/lib/storage';
-import { persistReducer, persistStore } from 'redux-persist';
+import { persistReducer, persistStore,  } from 'redux-persist';
 
 const employeePersistConfig = {
   key: 'employee',
@@ -15,6 +15,10 @@ const store = configureStore({
   reducer: {
     employee: persistedEmployeeReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export default store;
