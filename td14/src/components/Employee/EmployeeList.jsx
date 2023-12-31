@@ -1,4 +1,3 @@
-// components/EmployeeList.js
 import React, { useState } from "react";
 import Table from "../../components/Table/Table";
 
@@ -44,21 +43,6 @@ const EmployeeList = ({ employees }) => {
       Header: "Start Date",
       accessor: "startDate", // Replace with the actual key in your employee object
     },
-    // {
-    //   Header: "Address",
-    //   accessor: "address",
-    //   Cell: ({ row }) => {
-    //     console.log("Row Values:", row.values); // Add this line to log row.values
-    //     return (
-    //       <div>
-    //         <p>Street: {row.values.address?.street}</p>
-    //         <p>City: {row.values.address?.city}</p>
-    //         <p>Zip Code: {row.values.address?.zipCode}</p>
-    //         <p>State: {row.values.address?.state}</p>
-    //       </div>
-    //     );
-    //   },
-    // },
     {
       Header: "Department",
       accessor: "department", // Replace with the actual key in your employee object

@@ -1,6 +1,6 @@
 import React from "react";
+import { useState, useEffect } from 'react';
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addEmployee } from "../../treatments/reduxtoolkit/employeeSlice"; // Update the path
 import { Link } from "react-router-dom";
@@ -8,45 +8,35 @@ import states from "../../data/states";
 import departments from "../../data/departments";
 import DatePicker from "../DatePicker/DatePicker";
 import CustomSelect from "../Select/Select";
-import { useAlert } from "react-alert"; // Import useAlert
+
 
 const EmployeeForm = ({ onSaveEmployee }) => {
+  const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
   const { register, handleSubmit, reset, setValue, watch } = useForm();
 
-  const navigate = useNavigate(); // Initialize useNavigate
+  useEffect(() => {
+    // Sync modal state with local storage whenever it changes
+    localStorage.setItem('modalOpen', JSON.stringify(modalOpen));
+  }, [modalOpen]);
 
-  const alert = useAlert();
 
   const handleSaveEmployee = (data) => {
 
     const formattedData = {
       ...data,
-      // address: {
-      //   street: data.street,
-      //   city: data.city,
-      //   zipCode: data.zipCode,
-      //   state: data.state,
-      // },
       dateOfBirth: data.dateOfBirth ? new Date(data.dateOfBirth).toLocaleDateString('fr-FR') : null,
     startDate: data.startDate ? new Date(data.startDate).toLocaleDateString('fr-FR') : null,
     };
     dispatch(addEmployee(formattedData));
     onSaveEmployee(data);
     reset();
+    setModalOpen(true);
 
-    alert.show("Employee added successfully!", {
-      type: "success",
-      onClose: () => {
-        // Redirect to the employee list page after the alert is closed (adjust as needed)
-        // Example using react-router-dom's useNavigate
-        navigate("/employees");
-      },
-    });
   };
 
   return (
-    <div className="container mt-5 FormEmployee w-25">
+    <div className="container mt-5 FormEmployee w-auto">
       <div className="mt-3 text-center">
         <Link to="/employees" className="btn btn-success mt-2 mb-5 btn-form">
           View Current Employees

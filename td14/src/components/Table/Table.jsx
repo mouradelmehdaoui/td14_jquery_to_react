@@ -13,7 +13,7 @@ const Table = ({ data, columns }) => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
+    // rows,
     prepareRow,
     state,
     setGlobalFilter,
@@ -98,10 +98,10 @@ const Table = ({ data, columns }) => {
                   {Math.min((pageIndex + 1) * pageSize, data.length)} of{" "}
                   {data.length} entries
                 </p>
-                <button class="btn btn-outline-dark px-1" onClick={previousPage} disabled={!canPreviousPage}>
+                <button className="btn btn-outline-dark px-1" onClick={previousPage} disabled={!canPreviousPage}>
                   Previous Page
                 </button>
-                <button class="btn btn-outline-dark" onClick={nextPage} disabled={!canNextPage}>
+                <button className="btn btn-outline-dark" onClick={nextPage} disabled={!canNextPage}>
                   Next Page
                 </button>
               </div>

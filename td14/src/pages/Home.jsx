@@ -1,23 +1,27 @@
 import React from "react";
 import EmployeeForm from "../components/Employee/EmployeeForm";
 import Header from "../components/Header/Header";
-import { useState } from 'react';
-
-
+import { useState, useEffect } from 'react';
+import Modal from 'my-modal-success/dist/Modal';
 
 const Home = () => {
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Sync isOpen state with local storage
+    localStorage.setItem("modalOpen", JSON.stringify(modalOpen));
+  }, [modalOpen]);
 
   const handleSaveEmployee = (employeeData) => {
     // Implement your saveEmployee logic here
     console.log("Employee data:", employeeData);
-    setIsOpen(true);
+    setModalOpen(true);
   };
   return (
     <>
      <div className="create-employee">
-     <div className={`background ${isOpen ? 'blur' : ''}`}>
+     <div className={`background ${modalOpen ? 'blur' : ''}`}>
       <Header page="create" />
       <main>
         <div>
@@ -25,6 +29,9 @@ const Home = () => {
         </div>
       </main>
       </div>
+      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
+        <p>Form submitted successfully!</p>
+      </Modal>
       </div>
     </>
   );

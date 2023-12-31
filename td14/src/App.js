@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Error from './pages/Error'
-import CreateEmployee from './pages/CreateEmployee';
+import Employee from './pages/Employee';
 
 
 // // Bootstrap
@@ -17,7 +17,7 @@ export default function App() {
 		<>
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/employees" element={<CreateEmployee />} />
+				<Route path="/employees" element={<Employee />} />
 				<Route path="*" element={<Error />} />
 			</Routes>
 		</>

@@ -12,8 +12,8 @@ const SearchBar = ({ onSearch }) => {
         aria-describedby="search-addon"
         onChange={(e) => onSearch(e.target.value)}
       />
-      <span class="input-group-text border-0" id="search-addon">
-        <i class="fas fa-search"></i>
+      <span className="input-group-text border-0" id="search-addon">
+        <i className="fas fa-search"></i>
       </span>
     </div>
   );
