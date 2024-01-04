@@ -41,7 +41,7 @@ const Table = ({ data, columns }) => {
       <div className="d-flex justify-content-between align-items-center mb-3">
         <SearchBar onSearch={(value) => setGlobalFilter(value || undefined)} />
       </div>
-      <div className="table-responsive">
+      <div className="table">
       <table {...getTableProps()} className="table">
         <thead>
           {headerGroups.map((headerGroup) => (
