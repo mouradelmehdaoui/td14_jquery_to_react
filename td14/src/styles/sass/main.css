@@ -297,6 +297,12 @@ table tfoot {
   --bs-table-bg: #b8c47e !important;
 }
 
+@media (min-width: 576px) {
+  .body-table .container,
+  .body-table .container-sm {
+    max-width: 100% !important;
+  }
+}
 /* Tooltip container */
 /* Tooltip text */
 /* Show the tooltip text when you mouse over the tooltip container */

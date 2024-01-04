@@ -8,3 +8,13 @@ table {
         --bs-table-bg: #b8c47e !important;
     }
 }
+
+@media (min-width: 576px) {
+    .body-table {
+      // Override the Bootstrap rule for .container inside .body-table
+      .container,
+      .container-sm {
+        max-width: 100% !important; // Add your custom max-width
+      }
+    }
+  }

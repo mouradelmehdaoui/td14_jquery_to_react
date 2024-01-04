@@ -37,11 +37,11 @@ const Table = ({ data, columns }) => {
   const { globalFilter, pageIndex, pageSize } = state;
 
   return (
-    <div className="container mt-5">
+    <div className="mt-5">
       <div className="d-flex justify-content-between align-items-center mb-3">
         <SearchBar onSearch={(value) => setGlobalFilter(value || undefined)} />
       </div>
-      <div className="table">
+      <div className="container body-table">
       <table {...getTableProps()} className="table">
         <thead>
           {headerGroups.map((headerGroup) => (

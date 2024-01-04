@@ -11,10 +11,8 @@ const Employee = () => {
 
 	<>
 	<Header page="list" />
-    <div className="container">
       <p className="mt-5 mb-4 text-center h2">Current Employees</p>
       <EmployeeList employees={employees} />
-    </div>
 	</>
   );
 };
