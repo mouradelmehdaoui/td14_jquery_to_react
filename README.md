@@ -10,7 +10,7 @@ Faites passer une librairie jQuery vers React
 
 
 
-INTRODUCTION
+## INTRODUCTION
 
 Je travaille pour le département technologique d'une grande société financière, WealthHealth. Cette société utilise une application web interne, appelée HRnet, qui gère les dossiers des employés. L'application est ancienne et utilise jQuery côté front end, ce qui entraîne des bugs considérables et une augmentation des plaintes en interne.
 
@@ -23,7 +23,8 @@ Effectuer des tests de performance Lighthouse en comparant l'ancienne et la nouv
 Créer une nouvelle version des pages "Create Employee" et "Employee List" avec React.
 Ajouter un système de gestion d'état (la version actuelle utilise un stockage local).
 Exporter le plugin converti sur NPM.
-💻 Technologies used
+💻 Technologies used :
+
 
 
 🚨 Original jQuery source code and issues
