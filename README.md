@@ -1,6 +1,11 @@
 # Projet n°14 - Développeur Applications Javascript React
 # WealthHealth - HRNet
 Author : Mourad El mehdaoui
+
+<p align="center">
+  <img src="https://github.com/mouradelmehdaoui/td14_jquery_to_react/assets/69789675/04a023ed-2d3c-4146-a1b1-f8309e4e78ff" alt="Sublime's custom image"/>
+</p>
+
 Faites passer une librairie jQuery vers React
 
 
