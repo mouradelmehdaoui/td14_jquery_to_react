@@ -62,9 +62,9 @@ Nous voulons également mesurer des données quantifiables (ex. : temps de charg
 
 Lighthouse test results :
 
-jQuery : https://github.com/mouradelmehdaoui/td14_jquery_to_react/td14/src/performance/lighthouse_jquery_2_pages.pdf
+jQuery : https://github.com/mouradelmehdaoui/td14_jquery_to_react/blob/main/td14/src/performance/lighthouse_jquery_2_pages.pdf
 
-React : https://github.com/mouradelmehdaoui/td14_jquery_to_react/td14/src/performance/lighthouse_react_2_pages.pdf
+React : https://github.com/mouradelmehdaoui/td14_jquery_to_react/blob/main/td14/src/performance/lighthouse_react_2_pages.pdf
 
 ___
 🖥️ Screenshots
