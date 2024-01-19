@@ -15,15 +15,26 @@ mockEmployeeList.forEach((employee) => {
   store.dispatch(addEmployee(employee));
 });
 
-
 const root = createRoot(document.getElementById('root'));
 
-root.render(
-  <Provider store={store}>
+/**
+ * The main entry point for the application.
+ * Renders the App component wrapped in Router and Redux Provider.
+ *
+ * @function
+ * @returns {void}
+ */
+const renderApp = () => {
+  root.render(
+    <Provider store={store}>
       <React.StrictMode>
-          <Router>
-            <App />
-          </Router>
+        <Router>
+          <App />
+        </Router>
       </React.StrictMode>
-  </Provider>
-);
+    </Provider>
+  );
+};
+
+// Render the application
+renderApp();

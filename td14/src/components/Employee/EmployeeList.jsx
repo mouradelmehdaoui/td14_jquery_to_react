@@ -1,12 +1,26 @@
 import React, { useState } from "react";
 import Table from "../../components/Table/Table";
 
+/**
+ * EmployeeList component displays a list of employees in a table.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Array} props.employees - Array of employee objects.
+ * @returns {JSX.Element} React component
+ */
 const EmployeeList = ({ employees }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const entriesPerPage = 10;
   const startEntry = 1;
   const endEntry = Math.min(startEntry + entriesPerPage - 1, employees.length);
   const totalEntries = employees.length;
+
+  /**
+   * Column configuration for the employee table.
+   *
+   * @type {Array}
+   */
 
   const columns = [
     {

@@ -1,6 +1,13 @@
-// components/SearchBar.js
 import React from "react";
 
+/**
+ * SearchBar component provides a search input for filtering data.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Function} props.onSearch - Callback function triggered on search input change.
+ * @returns {JSX.Element} React component
+ */
 const SearchBar = ({ onSearch }) => {
   return (
     <div className="input-group rounded w-25 mx-auto">

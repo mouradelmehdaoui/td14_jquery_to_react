@@ -1,4 +1,3 @@
-// components/Table.js
 import React from "react";
 import {
   useTable,
@@ -8,12 +7,20 @@ import {
 } from "react-table";
 import SearchBar from "../../components/Search/SearchBar";
 
+/**
+ * Table component displays a paginated and sortable table with global search functionality.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Array} props.data - Array of data to be displayed in the table.
+ * @param {Array} props.columns - Array of column configurations for the table.
+ * @returns {JSX.Element} React component
+ */
 const Table = ({ data, columns }) => {
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    // rows,
     prepareRow,
     state,
     setGlobalFilter,
@@ -34,7 +41,7 @@ const Table = ({ data, columns }) => {
     usePagination
   );
 
-  const { globalFilter, pageIndex, pageSize } = state;
+  const {pageIndex, pageSize } = state;
 
   return (
     <div className="mt-5">

@@ -10,30 +10,49 @@ import DatePicker from "../DatePicker/DatePicker";
 import CustomSelect from "../Select/Select";
 
 
+
+/**
+ * EmployeeForm component represents a form for creating a new employee.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Function} props.onSaveEmployee - Callback function to execute after saving an employee.
+ * @returns {JSX.Element} React component
+ */
 const EmployeeForm = ({ onSaveEmployee }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
   const { register, handleSubmit, reset, setValue, watch } = useForm();
 
   useEffect(() => {
-    // Sync modal state with local storage whenever it changes
-    localStorage.setItem('modalOpen', JSON.stringify(modalOpen));
   }, [modalOpen]);
 
-
+  /**
+   * Handles saving employee data.
+   *
+   * @param {Object} data - Form data submitted.
+   */
   const handleSaveEmployee = (data) => {
-
+    // Format date strings before dispatching the action
     const formattedData = {
       ...data,
       dateOfBirth: data.dateOfBirth ? new Date(data.dateOfBirth).toLocaleDateString('fr-FR') : null,
-    startDate: data.startDate ? new Date(data.startDate).toLocaleDateString('fr-FR') : null,
+      startDate: data.startDate ? new Date(data.startDate).toLocaleDateString('fr-FR') : null,
     };
-    dispatch(addEmployee(formattedData));
-    onSaveEmployee(data);
-    reset();
-    setModalOpen(true);
 
+    // Dispatch the addEmployee action with the formatted data
+    dispatch(addEmployee(formattedData));
+
+    // Execute the callback function provided to onSaveEmployee prop
+    onSaveEmployee(data);
+
+    // Reset the form fields
+    reset();
+
+    // Open the modal
+    setModalOpen(true);
   };
+
 
   return (
     <div className="container mt-5 FormEmployee w-auto">
@@ -51,7 +70,7 @@ const EmployeeForm = ({ onSaveEmployee }) => {
           <div className="form-group input">
             <label htmlFor="first-name">First Name</label>
             <input
-              {...register("firstName")}
+              {...register("firstName", { required: true })}
               type="text"
               className="form-control"
               id="first-name"
@@ -61,7 +80,7 @@ const EmployeeForm = ({ onSaveEmployee }) => {
           <div className="form-group input">
             <label htmlFor="last-name">Last Name</label>
             <input
-              {...register("lastName")}
+              {...register("lastName", { required: true })}
               type="text"
               className="form-control"
               id="last-name"
@@ -84,7 +103,7 @@ const EmployeeForm = ({ onSaveEmployee }) => {
           <div className="form-group">
             <label htmlFor="street">Street</label>
             <input
-              {...register("street")}
+              {...register("street", { required: true })}
               type="text"
               className="form-control"
               id="street"
@@ -94,7 +113,7 @@ const EmployeeForm = ({ onSaveEmployee }) => {
           <div className="form-group">
             <label htmlFor="city">City</label>
             <input
-              {...register("city")}
+              {...register("city", { required: true })}
               type="text"
               className="form-control"
               id="city"
@@ -104,7 +123,7 @@ const EmployeeForm = ({ onSaveEmployee }) => {
           <div className="form-group input">
             <label htmlFor="zip-code">Zip Code</label>
             <input
-              {...register("zipCode")}
+              {...register("zipCode", { required: true })}
               type="number"
               className="form-control"
               id="zip-code"
