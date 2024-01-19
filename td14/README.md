@@ -22,7 +22,7 @@ Exporter le plugin converti sur NPM.
 ## `NodeJS v20.9.0`
 
 ### Install dependencies : 
-`npm install --force or `
+`npm install --force or npm install --legacy-peer-deps`
 
 ### if not working use this 
 `npm install --legacy-peer-deps`
