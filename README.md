@@ -31,7 +31,7 @@ https://www.npmjs.com/package/my-modal-success
 
 💾 Frontend installation
 Install NodeJS : NodeJS
-Clone the repo : git clone https://github.com/JaRoD41/hrnet.git
+Clone the repo : git clone mouradelmehdaoui/td14_jquery_to_react
 ### Install dependencies : 
 `npm install --force or npm install --legacy-peer-deps`
 ### Launch the app : `npm start`
@@ -48,3 +48,8 @@ React : https://github.com/mouradelmehdaoui/td14_jquery_to_react/td14/src/perfor
 
 
 🖥️ Screenshots
+
+![add_employee](https://github.com/mouradelmehdaoui/td14_jquery_to_react/assets/69789675/ecfdfc11-23b8-49c2-b01c-d5572aa490ac)
+
+###
+![list_employees](https://github.com/mouradelmehdaoui/td14_jquery_to_react/assets/69789675/eec7b8ff-940a-442a-9bd6-64338e9eca53)
